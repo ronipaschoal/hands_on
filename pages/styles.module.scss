@@ -1,0 +1,17 @@
+@import '../styles/variables';
+
+.home {
+
+  min-height: calc(100vh - ($menu-height + $footer-height));
+
+  h1 {
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+  }
+
+  margin: 0 0 calc($menu-height + $footer-height) 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: calc($menu-height) 0 calc($footer-height) 0;
+  }
+}

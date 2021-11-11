@@ -1,0 +1,82 @@
+@import '../../styles/variables';
+
+header.header {
+  
+  height: $menu-height;
+  width: 100vw;
+  
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  
+  background: $color-background-primary;
+  box-shadow: 1px 2px 3px #bfc6c9;
+
+  nav.navbar {
+    
+    height: 100%;
+    max-width: $container-max-width;
+
+    margin: 0 auto;
+    padding: 0 $container-padding 0;
+    
+    display: flex;
+    justify-content: space-between;
+    
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    ul {
+      height: 100%;
+      
+      text-align: center;
+      
+      display: flex;
+
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      
+      li {
+        height: 100%;
+        width: auto;
+
+        margin-left: 3rem;
+
+        &.active, &:hover:not(.active) {
+
+          border-bottom: $color-primary .2rem solid;
+          a {
+            opacity: 1;
+          }
+        }
+
+        a {
+          height: 100%;
+          width: 100%;
+
+          font-size: 1.6rem;
+          color: $color-primary;
+          font-weight: bold;
+
+          opacity: .6;
+          letter-spacing: .3rem;
+
+          text-align: center;
+          align-items: center;
+          display: flex;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    top: 0;
+  }
+}
+

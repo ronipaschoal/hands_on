@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.footer{
+  height: 3rem;
+  width: 100%;
+
+  position: fixed;
+  bottom: $menu-height;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: $color-secondary;
+  background: $color-background-secondary;
+  
+  @media (min-width: $breakpoint-tablet) {
+    bottom: 0;
+  }
+}

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "OpenSans";
+  src: url(../public/font/open-sans.ttf) format("truetype");
+}
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 800px;
+
+$color-primary: #212121;
+$color-background-primary: #FCC700;
+
+$color-secondary: #FFFFFF;
+$color-background-secondary: #212121;
+
+$menu-height: 5.6rem;
+$footer-height: 3rem;
+
+$container-padding: 5%;
+$container-max-width: 1200px;
