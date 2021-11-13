@@ -5,10 +5,10 @@ const Header: NextPage = () => {
 
   return (
     <Head>
-
       <title>Hands On | The System!</title>
-
-      <meta name="description" content="Sistema desenvolvido em React + Next para testar os conhecimentos!" />
+      <meta
+        name="description" 
+        content="Sistema desenvolvido em React + Next para testar os conhecimentos!" />
       <link rel="icon" href="../images/favicon.ico" type="image/png" />
     </Head>
   );

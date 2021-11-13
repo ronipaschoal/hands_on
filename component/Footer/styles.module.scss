@@ -4,6 +4,8 @@
   height: 3rem;
   width: 100%;
 
+  font-size: 1.2rem;
+
   position: fixed;
   bottom: $menu-height;
 
@@ -14,6 +16,20 @@
   color: $color-secondary;
   background: $color-background-secondary;
   
+  &.botton {
+    bottom: 0;
+  }
+
+  div {
+    width: 100%;
+
+    max-width: 40rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
   @media (min-width: $breakpoint-tablet) {
     bottom: 0;
   }
