@@ -11,6 +11,20 @@
     text-align: center;
   }
 
+  form {
+    width: 50rem;
+    margin: 0 auto;
+  }
+
+  label, input {
+    width: 100%;
+    padding: .5rem;
+
+    display: block;
+    margin: 10px 0;
+    border-radius: .4rem;
+  }
+
   margin: 0 0 calc($menu-height + $footer-height) 0;
 
   @media (min-width: $breakpoint-tablet) {

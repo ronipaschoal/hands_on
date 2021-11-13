@@ -1,7 +1,11 @@
 @import 'reset';
 @import 'variables';
 
-html {
+body {
+  background: #fdfdfd;
+
   font-family: "OpenSans", sans-serif;
-  font-weight: 700;
+  font-size: 1.6rem;
+
+  text-align: center;
 }
