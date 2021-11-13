@@ -1,16 +1,23 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { logoutService } from '../../services/auth';
+
+import { useContext } from 'react';
 
 import styles from './styles.module.scss';
 
+import LoginContext from '../../contexts/LoginContext';
+import { logoutService } from '../../services/auth';
+
+
 interface Props {
-  menuActive: string;
+  menuActive?: string;
 }
 
 const Menu: NextPage<Props> = ({menuActive}) => {
   
+  const user = useContext(LoginContext);
+
   return (
     <header id='menu' className={styles.header}>
       <nav className={styles.navbar}>
@@ -32,13 +39,11 @@ const Menu: NextPage<Props> = ({menuActive}) => {
           </li>
           <li className={menuActive == 'profile' ? styles.active : ''}>
             <Link href={`/profile`}>
-              <a>{'<Name>'}</a>
+              <a>{user.name}</a>
             </Link>
           </li>
           <li className={menuActive == 'logout' ? styles.active : ''}>
-            <Link href={`/login`}>
               <a onClick={logoutService}>{'Logout'}</a>
-            </Link>
           </li>
         </ul>
       </nav>

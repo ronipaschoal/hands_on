@@ -1,7 +1,4 @@
 import type { NextPage } from 'next';
-import { NextResponse } from 'next/server';
-import Router from 'next/router';
-import Link from 'next/link';
 
 import styles from './styles.module.scss';
 
@@ -27,19 +24,8 @@ const Login: NextPage = () => {
     console.log('email', login);
     console.log('password', password);
 
-    interface user {
-      name: string;
-      email: string;
-      senha: string;
-    }
+    loginService({ login: login, password: password });
 
-    loginService({
-      name: 'string',
-      email: 'string',
-      senha: 'string'
-    });
-
-    Router.push('/');
   }
 
   return (
