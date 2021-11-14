@@ -14,7 +14,7 @@ export const loginService = (user: Login) => {
   axios('https://jsonplaceholder.typicode.com/users/1')
     .then(response => {
       if(response.status == 200) {
-        localStorage.setItem(TOKEN_KEY, JSON.stringify({...user, ...response.data}));
+        localStorage.setItem(TOKEN_KEY, JSON.stringify({...response.data, ...user}));
         Router.push('/');
       }
     });
