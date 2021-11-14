@@ -5,7 +5,7 @@ export const TOKEN_KEY = "@hands-on-Token";
 export const isAuthenticated = () => localStorage.getItem(TOKEN_KEY) !== null;
 
 interface Login {
-  login: string;
+  email: string;
   password: string;
 }
 

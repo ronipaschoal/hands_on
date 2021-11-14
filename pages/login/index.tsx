@@ -15,16 +15,13 @@ const Login: NextPage = () => {
     event.preventDefault();
 
     const target = event.target as typeof event.target & {
-      login: { value: string };
+      email: { value: string };
       password: { value: string };
     };
-    const login = target.login.value;
+    const email = target.email.value;
     const password = target.password.value;
 
-    console.log('email', login);
-    console.log('password', password);
-
-    loginService({ login: login, password: password });
+    loginService({ email: email, password: password });
 
   }
 
@@ -32,12 +29,12 @@ const Login: NextPage = () => {
     <>
       <Header />
       <main className={styles.login}>
-        <h1>Login</h1>
         <form onSubmit={handleSubimit}>
-          <label htmlFor="login">Login</label>
-          <input id="login" name="login" type="text" />
-          <label htmlFor="password">Senha</label>
-          <input id="password" name="password" type="password" />
+          <h1>Faça seu login</h1>
+          <label htmlFor="email">Email:</label>
+          <input id="email" name="email" type="text" placeholder="Digite seu e-mail" />
+          <label htmlFor="password">Senha:</label>
+          <input id="password" name="password" type="password" placeholder="Digite sua senha" />
           <Button>Entrar</Button>
         </form>
         <Footer botton={true} />
