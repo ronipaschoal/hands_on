@@ -2,9 +2,12 @@
 
 .login {
 
-  min-height: calc(100vh - ($menu-height + $footer-height));
+  min-height: calc(100vh - $footer-height);
 
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   h1 {
     margin: 2rem 0 1rem 0;
@@ -12,22 +15,35 @@
   }
 
   form {
-    width: 50rem;
+    padding: 2rem;
+    width: 40rem;
     margin: 0 auto;
   }
 
   label, input {
-    width: 100%;
-    padding: .5rem;
-
+    padding: 1rem;
+    
     display: block;
-    margin: 10px 0;
     border-radius: .4rem;
   }
+  
+  input {
+    width: 100%;
+    border: 1px solid;
+    margin-bottom: 1rem;
 
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  label {
+    padding: 1rem 1rem 0;
+  }
+  
   margin: 0 0 calc($menu-height + $footer-height) 0;
 
   @media (min-width: $breakpoint-tablet) {
-    margin: calc($menu-height) 0 calc($footer-height) 0;
+    margin: 0 0 calc($footer-height) 0;
   }
 }

@@ -2,19 +2,20 @@
 
 .button {
   
-  width: 50%;
+  width: 100%;
   margin: 1rem 0 0;
-  padding: .5rem;
+  padding: 1rem;
 
   border-radius: .4rem;
 
-  border: $color-background-primary;
+  border: solid .1rem $color-background-primary;
   background: $color-background-primary;
 
   &:hover {
-    border: solid .1rem $color-primary;
     background: $color-background-hover-primary;
-    
     cursor: pointer;
+  }
+  &:active {
+    border: solid .1rem $color-primary;
   }
 }
