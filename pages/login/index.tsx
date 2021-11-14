@@ -62,7 +62,7 @@ const Login: NextPage = () => {
   return (
     <>
       <Header />
-      <main lang="pt-BR" className={styles.login}>
+      <main className={styles.login}>
         <form onSubmit={handleSubimit}>
           <h1>Faça seu login</h1>
           <label htmlFor="email">E-mail:</label>

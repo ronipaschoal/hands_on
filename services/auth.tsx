@@ -32,6 +32,5 @@ export const getLoggedInUser = () => {
     return false;
   } else {
     return JSON.parse(localStorage.getItem(TOKEN_KEY) as string);
-
   }
 };

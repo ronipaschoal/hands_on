@@ -4,6 +4,11 @@
 
   min-height: calc(100vh - ($menu-height + $footer-height));
 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  
   h1 {
     padding: 2rem 0 1rem 0;
     text-align: center;
@@ -11,7 +16,12 @@
   }
 
   p {
-    margin: 4rem 0;
+    margin: 2rem 0;
+  }
+
+  a {
+    margin-top: 4rem;
+    width: 50%;
   }
 
   margin: 0 0 calc($menu-height + $footer-height) 0;
