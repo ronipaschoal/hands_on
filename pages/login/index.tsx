@@ -55,7 +55,11 @@ const Login: NextPage = () => {
     const validPassword = validatePassword(target.password.value);
     
     if(validEmail && validPassword) {
-      loginService({ email: target.email.value, password: target.password.value });
+      loginService({
+        email: target.email.value,
+        password: target.password.value,
+        lastAccess: Date.now(),
+      });
     }
 
   }

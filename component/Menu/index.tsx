@@ -30,8 +30,6 @@ const Menu: NextPage<Props> = ({menuActive}) => {
       setHomeUrl('/');
     }
   }, []);
-  
-  console.log(loggedUser);
 
   return (
     <header id='menu' className={styles.header}>

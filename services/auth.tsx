@@ -7,14 +7,15 @@ export const isAuthenticated = () => localStorage.getItem(TOKEN_KEY) !== null;
 interface Login {
   email: string;
   password: string;
+  lastAccess: number;
 }
 
-export const loginService = (user: Login) => {
+export const loginService = (login: Login) => {
 
   axios('https://jsonplaceholder.typicode.com/users/1')
     .then(response => {
       if(response.status == 200) {
-        localStorage.setItem(TOKEN_KEY, JSON.stringify({...response.data, ...user}));
+        localStorage.setItem(TOKEN_KEY, JSON.stringify({...response.data, ...login}));
         Router.push('/');
       }
     });

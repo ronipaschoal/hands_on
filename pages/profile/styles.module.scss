@@ -3,10 +3,52 @@
 .profile {
 
   min-height: calc(100vh - ($menu-height + $footer-height));
+  padding: 0 $container-padding;
 
   h1 {
     padding: 4rem 0 1rem 0;
     text-align: center;
+  }
+  
+  div {
+    display: grid;
+	  grid-template-columns: 2fr 1fr;
+
+    div {
+      display: block;
+    }
+  }
+
+  label, input {
+    padding: 1rem;
+    
+    display: block;
+    border-radius: .4rem;
+  }
+  
+  input {
+    width: 100%;
+    border: 1px solid;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .image {
+    height: 15rem;
+    width: 10rem;
+    overflow: hidden;
+
+    img {
+      height: 15rem !important;
+      width: 15rem !important;
+      max-height: 15rem !important;
+      max-width: 15rem !important;
+
+      margin-left: -2.5rem !important;
+    }
+    
   }
 
   margin: 0 0 calc($menu-height + $footer-height) 0;
