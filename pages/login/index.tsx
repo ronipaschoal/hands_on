@@ -8,6 +8,7 @@ import Button from '../../component/Button';
 
 import {loginService} from '../../services/auth';
 import { useState } from 'react';
+import Menu from '../../component/Menu';
 
 const Login: NextPage = () => {
 
@@ -63,6 +64,7 @@ const Login: NextPage = () => {
     <>
       <Header />
       <main className={styles.login}>
+        <Menu menuActive={'login'} />
         <form onSubmit={handleSubimit}>
           <h1>Faça seu login</h1>
           <label htmlFor="email">E-mail:</label>
@@ -73,7 +75,7 @@ const Login: NextPage = () => {
           <span className={styles.invalid}>{passwordError}</span>
           <Button>Entrar</Button>
         </form>
-        <Footer botton={true} />
+        <Footer />
       </main>
     </>
   )

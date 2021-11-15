@@ -6,15 +6,11 @@ import github from '../../public/images/github.png';
 
 import styles from './styles.module.scss';
 
-interface Props {
-  botton?: boolean;
-}
-
-const Footer: NextPage<Props> = ({botton}) => {
+const Footer: NextPage = () => {
 
   return (
     <footer 
-      className={ !botton ? styles.footer : `${styles.footer} ${styles.botton}`}
+      className={styles.footer}
     >
       <div>
         15/11/2021

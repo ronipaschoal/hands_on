@@ -2,7 +2,7 @@
 
 .login {
 
-  min-height: calc(100vh - $footer-height);
+  min-height: calc(100vh - ($menu-height + $footer-height));
 
   display: flex;
   flex-direction: column;

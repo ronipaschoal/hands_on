@@ -3,6 +3,7 @@
 .home {
 
   min-height: calc(100vh - ($menu-height + $footer-height));
+  padding: 0 $container-padding;
 
   display: flex;
   flex-direction: column;
@@ -10,7 +11,7 @@
   align-items: center;
   
   h1 {
-    padding: 2rem 0 1rem 0;
+    padding: 4rem 0 1rem 0;
     text-align: center;
     margin-bottom: 2rem;
   }
@@ -22,6 +23,10 @@
   a {
     margin-top: 4rem;
     width: 50%;
+  }
+
+  button {
+    margin-bottom: 4rem;
   }
 
   margin: 0 0 calc($menu-height + $footer-height) 0;
