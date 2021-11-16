@@ -4,34 +4,52 @@
 
   min-height: calc(100vh - ($menu-height + $footer-height));
   padding: 0 $container-padding;
-
-  h1 {
-    padding: 4rem 0 1rem 0;
-    text-align: center;
-  }
   
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
   div {
-    display: grid;
-	  grid-template-columns: 2fr 1fr;
-
-    div {
-      display: block;
-    }
-  }
-
-  label, input {
-    padding: 1rem;
-    
+    height: 6.8rem;
     display: block;
-    border-radius: .4rem;
+    width: 100%;
   }
   
-  input {
-    width: 100%;
-    border: 1px solid;
+  form {
+    
+    label, input {
+      padding: 1rem;
+      
+      display: block;
+      border-radius: .4rem;
+  
+      margin: 1rem 0;
+    }
+  
+    label {
+      width: 40%;
+      display: inline-block;
+    }
+  
+    input {
+      width: 60%;
+      display: inline-block;
+  
+      border: 1px solid;
+  
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  
+    input:disabled {
+      background: #eee;
+      border-color: #aaa;
+    }
 
-    &:focus-visible {
-      outline: none;
+    div:last-child {
+      text-align: center;
+      padding: 2rem 0 10rem 0;
     }
   }
 
@@ -39,6 +57,7 @@
     height: 15rem;
     width: 10rem;
     overflow: hidden;
+    margin: 4rem auto;
 
     img {
       height: 15rem !important;
@@ -48,12 +67,40 @@
 
       margin-left: -2.5rem !important;
     }
-    
   }
 
-  margin: 0 0 calc($menu-height + $footer-height) 0;
+  button {
+    width: 50%;
+  }
+
+  .invalid {
+    margin-top: -.8rem;
+    min-height: 1.7rem;
+    display: block;
+
+    padding: 0 0 0 41%;
+    color: red;
+    font-size: 1.2rem;
+  }
+
+  margin: 0 auto calc($menu-height + $footer-height) auto;
 
   @media (min-width: $breakpoint-tablet) {
-    margin: calc($menu-height) 0 calc($footer-height) 0;
+    width: 80%;
+    margin: calc($menu-height) auto calc($footer-height) auto;
+
+    form {
+      label {
+        width: 20%;
+      }
+  
+      input {
+        width: 80%;
+      }
+
+      .invalid {
+        padding-left: 21%;
+      }
+    }
   }
 }

@@ -35,3 +35,8 @@ export const getLoggedInUser = () => {
     return JSON.parse(localStorage.getItem(TOKEN_KEY) as string);
   }
 };
+
+export const updateLoggedInUser = (loggedInUser: {}) => {
+  localStorage.setItem(TOKEN_KEY, JSON.stringify(loggedInUser));
+  Router.push('/');
+};
