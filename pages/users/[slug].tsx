@@ -101,7 +101,7 @@ const Users: NextPage = () => {
         </div>
         <div className={styles.buttonContainer}>
           <Button><Link href={`/users/${currentUser.id}/posts`}>Posts do Usuário</Link></Button>
-          <Button>Apagar Usuário</Button>
+          <Button><Link href={`/users`}>Apagar Usuário</Link></Button>
         </div>
       </section>
     </LoggedIn>

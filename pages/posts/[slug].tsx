@@ -44,17 +44,19 @@ const Posts: NextPage = () => {
   return (
     <LoggedIn currentPage="">
       <section className={styles.posts}>
+        <br/>{currentUser.id}
+        <br/>{currentUser.name}
+        <br/>{currentUser.username}
+        <br/>{currentUser.email}
+        <br />
+        <br />
+        <hr />
         <h1>Posts { slug }</h1>
-        {post.id}
-        {post.title}
-        {post.body}
+        <br/>{post.id}
+        <br/>{post.title}
+        <br/>{post.body}
+        <br/>{/* {posts.length} */}
         <Button><Link href={`/users/${currentUser.id}`}><a>Editar</a></Link></Button>
-          <br />
-        {currentUser.id}
-        {currentUser.name}
-        {currentUser.username}
-        {currentUser.email}
-        {/* {posts.length} */}
 
       </section>
     </LoggedIn>

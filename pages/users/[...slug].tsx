@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/dist/client/router';
 
@@ -9,7 +8,7 @@ import LoggedIn from '../../templates/LoggedIn';
 import { useEffect, useState } from 'react';
 import { getPostsByUserId } from '../../services/posts';
 import { getUserById } from '../../services/users';
-import Button from '../../component/Button';
+import Link from '../../component/Link';
 import Title from '../../component/title';
 
 const Users: NextPage = () => {
@@ -53,21 +52,28 @@ const Users: NextPage = () => {
           router.query.slug?.[1] == 'posts' && 
           posts.map((post, index) => {
             return <div key={index}>
-              <Image
-                src='https://via.placeholder.com/750/535353'
-                alt='Logotipo'
-                width='150'
-                height='150'
-              />
-              {post.id}
-              {post.title}
-              <Button><Link href={`/posts/${post.id}`}><a>Ver detalhes</a></Link></Button>
-               <br />
-              {currentUser.id}
-              {currentUser.name}
-              {currentUser.username}
-              {currentUser.email}
-              {posts.length}
+              <div>
+                <Image
+                  src='https://via.placeholder.com/750/535353'
+                  alt='Logotipo'
+                  width='150'
+                  height='150'
+                />
+              </div>
+              <div>
+                <br/>{post.id}
+                <br/>{post.title}
+                <br/>{currentUser.id}
+                <br/>{currentUser.name}
+                <br/>{currentUser.username}
+                <br/>{currentUser.email}
+                <br/>{posts.length} 
+              </div>
+              <Link href={`/posts/${post.id}`} type="secondary" >Ver detalhes</Link>
+              <br />
+              <br />
+              <hr />
+              <br />
             </div>
           })
         }

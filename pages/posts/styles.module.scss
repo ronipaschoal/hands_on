@@ -4,14 +4,22 @@
 
   min-height: calc(100vh - ($menu-height + $footer-height));
 
+  text-align: center;
+
   h1 {
     padding: 4rem 0 1rem 0;
     text-align: center;
   }
 
+  button {
+    margin: 4rem 0;
+    width: 50%;
+  }
+
   margin: 0 0 calc($menu-height + $footer-height) 0;
 
   @media (min-width: $breakpoint-tablet) {
-    margin: calc($menu-height) 0 calc($footer-height) 0;
+    width: 80%;
+    margin: calc($menu-height) auto calc($footer-height) auto;
   }
 }
