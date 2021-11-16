@@ -9,6 +9,7 @@ import LoggedIn from '../../templates/LoggedIn';
 import { useEffect, useState } from 'react';
 import { getUserById } from '../../services/users';
 import Button from '../../component/Button';
+import Title from '../../component/title';
 
 interface User {
   id: string;
@@ -57,18 +58,8 @@ const Users: NextPage = () => {
   return (
     <LoggedIn currentPage="">
       <section className={styles.user}>
-        <h1>User { router.query.slug }</h1>
-
+        <Title>User { router.query.slug }</Title>
         <div>
-          <div>
-            <input type="text" value={currentUser.id} disabled/>
-            <input type="text" value={currentUser.name}/>
-            <input type="text" value={currentUser.email}/>
-            <input type="text" value={currentUser.username}/>
-            <input type="text" value={`${currentUser.address.street}, ${currentUser.address.suite}`}/>
-            <input type="text" value={currentUser.phone}/>
-            <input type="text" value={currentUser.company.name}/>
-          </div>
           <div className={styles.image}>
             <Image
               src='https://via.placeholder.com/750/535353'
@@ -77,12 +68,41 @@ const Users: NextPage = () => {
               height='150'
             />
           </div>
+          <div>
+            <p>
+              <div>Id</div>
+              <div>{currentUser.id}</div>
+            </p>
+            <p>
+              <div>Nome</div>
+              <div>{currentUser.name}</div>
+            </p>
+            <p>
+              <div>E-mail</div>
+              <div>{currentUser.email}</div>
+            </p>
+            <p>
+              <div>Nome de Usuário</div>
+              <div>{currentUser.username}</div>
+            </p>
+            <p>
+              <div>Endereço</div>
+              <div>{`${currentUser.address.street}, ${currentUser.address.suite}`}</div>
+            </p>
+            <p>
+              <div>Telefone</div>
+              <div>{currentUser.phone}</div>
+            </p>
+            <p>
+              <div>Empresa</div>
+              <div>{currentUser.company.name}</div>
+            </p>
+          </div>
         </div>
-        <br />
-        <Link href={`/users/${currentUser.id}/posts`}><a><Button>{'Posts do Usuário'}</Button></a></Link>
-        <br />
-        <br />
-        <Button>Apagar Usuário</Button>
+        <div className={styles.buttonContainer}>
+          <Button><Link href={`/users/${currentUser.id}/posts`}>Posts do Usuário</Link></Button>
+          <Button>Apagar Usuário</Button>
+        </div>
       </section>
     </LoggedIn>
   )

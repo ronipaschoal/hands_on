@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { getPostsByUserId } from '../../services/posts';
 import { getUserById } from '../../services/users';
 import Button from '../../component/Button';
+import Title from '../../component/title';
 
 const Users: NextPage = () => {
 
@@ -47,7 +48,7 @@ const Users: NextPage = () => {
     
     <LoggedIn currentPage="">
       <section className={styles.users}>
-      <h1>User { `${slug?.[0] } / ${slug?.[1]}` }</h1>
+        <Title>User {currentUser.name} {slug?.[1]}</Title>
         {
           router.query.slug?.[1] == 'posts' && 
           posts.map((post, index) => {
