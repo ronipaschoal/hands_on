@@ -9,6 +9,7 @@ import Button from '../../component/Button';
 import {loginService} from '../../services/auth';
 import { useState } from 'react';
 import Menu from '../../component/Menu';
+import Title from '../../component/title';
 
 const Login: NextPage = () => {
 
@@ -61,7 +62,6 @@ const Login: NextPage = () => {
         lastAccess: Date.now(),
       });
     }
-
   }
 
   return (
@@ -70,7 +70,7 @@ const Login: NextPage = () => {
       <main className={styles.login}>
         <Menu menuActive={'login'} />
         <form onSubmit={handleSubimit}>
-          <h1>Faça seu login</h1>
+          <Title>Faça seu login</Title>
           <label htmlFor="email">E-mail:</label>
           <input id="email" name="email" type="text" placeholder="Digite seu e-mail" />
           <span className={styles.invalid}>{emailError}</span>
