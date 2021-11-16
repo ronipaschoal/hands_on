@@ -4,48 +4,38 @@
 
   min-height: calc(100vh - ($menu-height + $footer-height));
   padding: 0 $container-padding;
-  width: 100%;
-
-  h1 {
-    padding: 4rem 0 1rem 0;
-    text-align: center;
-  }
+  margin: 0 auto calc($menu-height + $footer-height) auto;
   
   .tableContainer {
-    width: 100%;
+    width: 101%;
     overflow-x: auto;
-  }
 
-  table {
-    margin: 4rem auto 0;
-    border-spacing: 0;
+    table {
+      width: 100%;
+      margin: 4rem 0;
+      border-spacing: 0;
+  
+      vertical-align: middle;
 
-    thead {
-      background: $color-background-primary;
-    }
-    td {
-      padding: .5rem 1rem;
-    }
-    tbody {
-      tr:nth-child(even) {
-        background: #f1f1f1;
+      tr {
+        height: 100%;
+      }
+      
+      td, th {
+        height: 100%;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid #ddd;
+      }
+      td:last-child {
+        min-width: 30rem;
+        text-align: center;
       }
     }
-    td:last-child {
-      width: 30rem;
-      text-align: center;
-    }
   }
-
-  button {
-    width: auto;
-    margin: 0 .5rem;
-  }
-
-  margin: 0 0 calc($menu-height + $footer-height) 0;
 
   @media (min-width: $breakpoint-tablet) {
-    margin: calc($menu-height) 0 calc($footer-height) 0;
+    width: 80%;
+    margin: calc($menu-height) auto calc($footer-height) auto;
   }
 }
 

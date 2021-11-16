@@ -13,13 +13,9 @@ interface Props {
   menuActive?: string;
 }
 
-interface User {
-  name: string;
-}
-
 const Menu: NextPage<Props> = ({menuActive}) => {
 
-  const [loggedUser, setLoggedUser] = useState({ name:'' } as User);
+  const [loggedUser, setLoggedUser] = useState({ name:'' });
 
   useEffect(() => {
     setLoggedUser(getLoggedInUser());

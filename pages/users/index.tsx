@@ -1,21 +1,15 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import styles from './styles.module.scss';
 import LoggedIn from '../../templates/LoggedIn';
+import Link from '../../component/Link';
 import { getAllUsers } from '../../services/users';
-import Button from '../../component/Button';
-
-interface User {
-  id: string;
-  name: string;
-  email: string;
-}
+import Title from '../../component/title';
 
 const Users: NextPage = () => {
   
-  const [allUsers, setAllUsers] = useState([]);
+  const [allUsers, setAllUsers] = useState([{id: '', name: '', email: ''}]);
 
   useEffect(() => {
     const allUsersPromise = getAllUsers();
@@ -25,47 +19,34 @@ const Users: NextPage = () => {
   return (
     <LoggedIn currentPage="">
       <section className={styles.users}>
-        <h1>Listagem de usuários</h1>
+
+        <Title>Listagem de usuários</Title>
         <div className={styles.tableContainer}>
           <table>
-            <thead>
               <tr>
-                <td>Id</td>
-                <td>Nome</td>
-                <td>E-mail</td>
-                <td>Ações</td>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Ações</th>
               </tr>
-            </thead>
-            <tbody>
               {
                 allUsers.map(user => {
-                  const {id, name, email} = (user as User);
-
                   return (
-                    <tr key={id}>
-                      <td>{id}</td>
-                      <td>{name}</td>
-                      <td>{email}</td>
+                    <tr key={user.id}>
+                      <td>{user.id}</td>
+                      <td>{user.name}</td>
+                      <td>{user.email}</td>
                       <td>
-                        <Link href={`/users/${id}`}>
-                          <a><Button>{'Editar'}</Button></a>
-                        </Link>
-                        <Link href={`/users/${id}/posts`}>
-                          <a><Button>{'Ver posts'}</Button></a>
-                        </Link>
-                        <Link href={`/users/${id}/coments`}>
-                          <a><Button>{'Ver Coemtários'}</Button></a>
-                        </Link>
+                        <Link href={`/users/${user.id}`}>Editar</Link>
+                        <Link href={`/users/${user.id}/posts`}>Ver posts</Link>
+                        <Link href={`/users/${user.id}/coments`}>Ver Coemtários</Link>
                       </td>
                     </tr>
                   )
                 })
               }
-              
-            </tbody>
           </table>
         </div>
-
       </section>
     </LoggedIn>
   )

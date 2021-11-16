@@ -6,7 +6,7 @@ header.header {
   width: 100vw;
   
   position: fixed;
-  bottom: 0;
+  bottom: $footer-height;
   z-index: 10;
   
   background: $color-background-primary;

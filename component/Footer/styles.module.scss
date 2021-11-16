@@ -7,7 +7,7 @@
   font-size: 1.2rem;
 
   position: fixed;
-  bottom: $menu-height;
+  bottom: 0;
 
   display: flex;
   align-items: center;
@@ -28,9 +28,5 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-  }
-
-  @media (min-width: $breakpoint-tablet) {
-    bottom: 0;
   }
 }
