@@ -6,6 +6,7 @@ import  styles  from './styles.module.scss';
 
 import LoggedIn from '../../templates/LoggedIn';
 import { getLoggedInUser } from '../../services/auth';
+import Button from '../../component/Button';
 
 interface User {
   id: string;
@@ -50,6 +51,8 @@ const Profile: NextPage = () => {
             />
           </div>
         </div>
+        <br />
+        <Button>Salvar</Button>
       </section>
     </LoggedIn>
   )

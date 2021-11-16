@@ -19,22 +19,16 @@ interface User {
 
 const Menu: NextPage<Props> = ({menuActive}) => {
 
-  const [homeUrl, setHomeUrl] = useState('/login');
   const [loggedUser, setLoggedUser] = useState({ name:'' } as User);
 
   useEffect(() => {
-
     setLoggedUser(getLoggedInUser());
-
-    if(loggedUser.name != '') {
-      setHomeUrl('/');
-    }
   }, []);
 
   return (
     <header id='menu' className={styles.header}>
       <nav className={styles.navbar}>
-        <Link href={homeUrl}>
+        <Link href={'/'}>
           <a className={styles.navLogo}>
           <Image
             src='https://via.placeholder.com/100/fff'

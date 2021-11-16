@@ -1,12 +1,11 @@
 import { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import Header from '../../component/Header';
 import Menu from '../../component/Menu';
 import Footer from '../../component/Footer';
 
 import { getLoggedInUser } from '../../services/auth';
-import LoginContext from '../../contexts/LoginContext';
 
 interface Props {
   currentPage?: string;
@@ -14,21 +13,19 @@ interface Props {
 
 const LoggedIn: NextPage<Props> = ({children, currentPage}) => {
 
-  const [user, setUser] = useState({});
   useEffect(() => {
-    const loggedInUser = getLoggedInUser();
-    loggedInUser && setUser(loggedInUser);
+    getLoggedInUser();
   }, []);
 
   return (
-    <LoginContext.Provider value={user}>
+    <>
       <Header />
       <main>
         <Menu menuActive={currentPage} />
           {children}
         <Footer />
       </main>
-    </LoginContext.Provider>
+    </>
   );
 };
 
