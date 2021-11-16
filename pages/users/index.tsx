@@ -37,9 +37,9 @@ const Users: NextPage = () => {
                       <td>{user.name}</td>
                       <td>{user.email}</td>
                       <td>
-                        <Link href={`/users/${user.id}`}>Editar</Link>
-                        <Link href={`/users/${user.id}/posts`}>Ver posts</Link>
-                        <Link href={`/users/${user.id}/coments`}>Ver Coemtários</Link>
+                        <Link href={`/users/${user.id}`} type="secondary">Editar</Link>
+                        <Link href={`/users/${user.id}/posts`} type="secondary">Ver posts</Link>
+                        <Link href={`/users/${user.id}/coments`} type="secondary">Ver Coemtários</Link>
                       </td>
                     </tr>
                   )

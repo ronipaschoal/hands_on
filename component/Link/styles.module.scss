@@ -7,10 +7,18 @@
   padding: 0 1rem;
 
   font-size: 1.4rem;
-  color: $color-link-secondary;
-
-  &:hover {
-    color: $color-background-hover-primary;
-    cursor: pointer;
+  
+  &.primary {
+    color: $color-primary;
   }
+
+  &.secondary {
+    color: $color-link-secondary;
+
+    &:hover {
+      color: $color-background-hover-primary;
+      cursor: pointer;
+    }
+  }
+  
 }
