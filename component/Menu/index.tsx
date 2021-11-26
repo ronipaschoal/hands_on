@@ -39,7 +39,7 @@ const Menu: NextPage<Props> = ({menuActive}) => {
             !loggedUser ? (
               <>
                 <li className={menuActive == 'login' ? styles.active : ''}>
-                    <a onClick={logoutService}>{'LogIn'}</a>
+                    <a onClick={logoutService}>{'Login'}</a>
                 </li>
               </>
             ):(
