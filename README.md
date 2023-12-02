@@ -1,8 +1,9 @@
 # Hands On
-Sistema criado para testar conhecimentos em ReactJs + NextJs.
 
-Fluxo de Telas:
+System created to test knowledge in ReactJs + NextJs.
+
+Screen Flow:
 ![alt text](https://github.com/ronipaschoal/hands_on/blob/main/public/images/screens.jpg?raw=true)
 
-Pantone Principal:
+Main Pantone:
 ![alt text](https://github.com/ronipaschoal/hands_on/blob/main/public/images/mobile.jpg?raw=true)
